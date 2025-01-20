@@ -9,7 +9,7 @@ public class LandingPageStepDefinition {
 	
 	LandingPageLocators landingPage = new LandingPageLocators();
 	
-	@Given("^user is on landing page$")
+	@Given("^User is on landing page of BookingDotCom$")
 	public void launchSessino() {
 		
 		landingPage.launchSession("https://www.booking.com/");
@@ -34,6 +34,20 @@ public class LandingPageStepDefinition {
 	public void dismissPopup() {
 		
 		landingPage.closePopUp();
+		
+	}
+	
+	@Then("^User can see Stays service$")
+	public void verifyStaysService(){
+		
+		landingPage.verifyStaysService();
+		
+	}
+	
+	@Then("^User can see Flights service$")
+	public void verifyFlightsService(){
+		
+		landingPage.verifyFlightsService();
 		
 	}
 
