@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions( features= {"src/test/resources/features"},
 glue = {"stepDefinitions"},
-tags = "@BookingDotCom_Stays",
+tags = "@ParabankLogin",
 dryRun = false,
 monochrome = true, 
 plugin = {"pretty", 
