@@ -77,9 +77,9 @@ public class DriverUtil {
 
 	}
 
-	public void pause() {
+	public void pause(long duration) {
 		try {
-			TimeUnit.MILLISECONDS.sleep(1);
+			TimeUnit.MILLISECONDS.sleep(duration);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -98,11 +98,11 @@ public class DriverUtil {
 
 		highLightElement(element);
 
-		pause();
+		pause(1000);
 
 		removeHighLightElement(element);
 
-		pause();
+		pause(1000);
 	}
 
 

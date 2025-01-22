@@ -14,5 +14,13 @@ public class SignInPageStepDefinition {
 		
 	}
 	
+	@When("^user enter username as (.*)$")
+	public void enterUserName(String userName) {
+		
+		signInPage.enterUserName(userName);
+		
+		
+	}
+	
 
 }
