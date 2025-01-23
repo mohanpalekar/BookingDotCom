@@ -98,11 +98,11 @@ public class DriverUtil {
 
 		highLightElement(element);
 
-		pause(1000);
+		pause(1);
 
 		removeHighLightElement(element);
 
-		pause(1000);
+		pause(1);
 	}
 
 

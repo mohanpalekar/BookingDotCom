@@ -13,6 +13,8 @@ public class ParaBankLoginLocators extends DriverUtil{
 
 	private By logInBtn = By.xpath("//input[@value='Log In']");
 	
+	private By registerBtn = By.linkText("Register");
+	
 
 	public void enterUserName(String input) {
 
@@ -31,6 +33,13 @@ public class ParaBankLoginLocators extends DriverUtil{
 	public void clickLogin() {
 
 		WebElement element = waitUntilElementToBeClickable(logInBtn);
+
+		element.click();
+	}
+	
+	public void clickRegister() {
+
+		WebElement element = waitUntilElementToBeClickable(registerBtn);
 
 		element.click();
 	}
