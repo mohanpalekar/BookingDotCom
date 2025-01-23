@@ -31,5 +31,11 @@ public class ParaBankLoginStepDefinition {
 		loginPage.clickLogin();
 		
 	}
+	
+	@When("^User click Register$")
+	public void clickRegister() {
+
+		loginPage.clickRegister();
+	}
 
 }
