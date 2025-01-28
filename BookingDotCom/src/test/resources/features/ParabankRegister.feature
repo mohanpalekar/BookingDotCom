@@ -8,4 +8,3 @@ Feature: Register
     Given User is on the landing page of Para bank
     When User click Register 
     And User enters registration details
-

@@ -9,4 +9,4 @@ Feature: ResetPassword
   When user dismisses popup
   When user clicks sign in
   When user enter username
-  Then user closes browser
+  #Then user closes browser

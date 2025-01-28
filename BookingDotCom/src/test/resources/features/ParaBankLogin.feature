@@ -10,4 +10,4 @@ Feature: Title of your feature
     When User enters login data as test123@gmail.com and Test@1234
     And User clicks Login 
     Then User should see Accounts Overview
-    And User closes the browser
+    #And User closes the browser

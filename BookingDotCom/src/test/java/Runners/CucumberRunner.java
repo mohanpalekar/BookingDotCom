@@ -8,8 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions( features= {"src/test/resources/features"},
-glue = {"stepDefinitions"},
-tags = "@ParaBankRegister",
+glue = {"stepDefinitions", "Hooks"},
+tags = "@ParabankLogin or @ParaBankRegister",
 dryRun = false,
 monochrome = true, 
 plugin = {"pretty", 

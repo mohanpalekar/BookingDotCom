@@ -43,7 +43,7 @@ Background:
   Scenario Outline: Login with correct credentials
   When user clicks sign in
   When user enter username as <username>
-  Then user closes browser
+  #Then user closes browser
   
   Examples: 
   
