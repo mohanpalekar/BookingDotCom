@@ -13,7 +13,7 @@ Background:
   Then User can see Stays service
   Then User can see Flights service
   Then User can see Flight and Hotel service
-  And user closes browser
+  #And user closes browser
   
   
   @BookingDotCom_Stays_GeneralizationOfLocator
@@ -21,13 +21,13 @@ Background:
   Then User can see Stays service
   Then User can see Flights service
   Then User can see Flight + Hotel service
-  And user closes browser
+  #And user closes browser
   
   
   @BookingDotCom_Stays_GeneralizationOfLocator1
   Scenario Outline: Title of your scenario
   Then User can see <serviceName> service
-  And user closes browser
+  #And user closes browser
   
   Examples:
   

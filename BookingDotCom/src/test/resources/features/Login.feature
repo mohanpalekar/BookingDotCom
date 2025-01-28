@@ -9,7 +9,7 @@ Feature: Login
   When user dismisses popup
   When user clicks sign in
   When user enter username
-  Then user closes browser
+  #Then user closes browser
   
   
   @Login1 @sanity @Regression
@@ -18,4 +18,4 @@ Feature: Login
   When user dismisses popup
   When user clicks sign in
   When user enter username
-  Then user closes browser
+  #Then user closes browser

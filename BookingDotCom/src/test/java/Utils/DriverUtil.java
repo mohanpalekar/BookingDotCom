@@ -11,10 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Driver.Driver;
-import Driver.DriverFactory;
 
 public class DriverUtil {
-	
+
 	private WebDriver driver;
 
 	private static JavascriptExecutor jse;
@@ -22,20 +21,20 @@ public class DriverUtil {
 	private static WebDriverWait wait;
 
 	public void launchSession(String url) {
-		
-		WebDriver driverParam = DriverFactory.getDriverManager("chrome").getDriver();
 
-		Driver.getDriverInstace().setDriver(driverParam);
+		//		WebDriver driverParam = new DriverFactory("chrome").getDriverManager().getDriver();
+		//
+		//		Driver.getDriverInstace().setDriver(driverParam);
 
 		driver= Driver.getDriverInstace().getDriver(); 
-		
+
 		jse = (JavascriptExecutor) driver;
-		
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		driver.get(url);
 
-		driver.manage().window().maximize();
+		// driver.manage().window().maximize();
 
 	}
 
