@@ -16,9 +16,21 @@ public class DriverUtil {
 
 	private WebDriver driver;
 
-	private static JavascriptExecutor jse;
+	private JavascriptExecutor jse;
 
-	private static WebDriverWait wait;
+	private WebDriverWait wait;
+
+
+	public DriverUtil() {
+
+		this.driver = Driver.getDriverInstace().getDriver();
+
+		jse = (JavascriptExecutor) driver;
+
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	}
+
 
 	public void launchSession(String url) {
 
@@ -26,11 +38,11 @@ public class DriverUtil {
 		//
 		//		Driver.getDriverInstace().setDriver(driverParam);
 
-		driver= Driver.getDriverInstace().getDriver(); 
-
-		jse = (JavascriptExecutor) driver;
-
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//		driver= Driver.getDriverInstace().getDriver(); 
+		//
+		//		jse = (JavascriptExecutor) driver;
+		//
+		//		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		driver.get(url);
 
