@@ -6,18 +6,16 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-
-@CucumberOptions( features= {"src/test/resources/features"},
+@CucumberOptions( features= {"@target/rerun.txt"},
 glue = {"stepDefinitions", "Hooks"},
-tags = "@ParabankLoginTest or @ParaBankRegister",
+tags = "",
 dryRun = false,
 monochrome = true, 
 plugin = {"pretty", 
 		"html:target/HTMLReports.html",
 		"json:target/JSON/report.json",
 		"junit:target/JNIT/reportJUnit.xml",
-		"rerun:target/rerun.txt"})
-
-public class CucumberRunner {
+		"rerun:target/finalFailed.txt"})
+public class FailedTestCaseRunner {
 
 }
