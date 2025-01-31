@@ -1,9 +1,10 @@
-[INFO ] 2025-01-31 08:15:02.664 [main] Hooks - Before All
-[INFO ] 2025-01-31 08:15:02.773 [main] Hooks - Before scenario
-[INFO ] 2025-01-31 08:15:04.077 [main] Hooks - Driver is initialized
-[INFO ] 2025-01-31 08:15:07.969 [main] DriverUtil - Driver is launched https://parabank.parasoft.com/parabank/index.htm
-[ERROR] 2025-01-31 08:15:19.000 [main] Hooks - Scenario Failed : Parabank Login
-[ERROR] 2025-01-31 08:15:19.270 [main] Hooks - Captured screenshot for failed scenario : Parabank Login
-[INFO ] 2025-01-31 08:15:19.271 [main] Hooks - after scenario
-[INFO ] 2025-01-31 08:15:19.534 [main] Hooks - Driver is closed
-[INFO ] 2025-01-31 08:15:19.555 [main] Hooks - After All
+[INFO ] 2025-01-31 08:49:26.129 [main] Hooks - Before All
+[INFO ] 2025-01-31 08:49:26.131 [main] Hooks - Browser : chrome
+[INFO ] 2025-01-31 08:49:26.228 [main] Hooks - Before scenario
+[INFO ] 2025-01-31 08:49:27.693 [main] Hooks - Driver is initialized
+[INFO ] 2025-01-31 08:49:32.229 [main] DriverUtil - Driver is launched https://parabank.parasoft.com/parabank/index.htm
+[ERROR] 2025-01-31 08:49:49.597 [main] Hooks - Scenario Failed : Parabank Login
+[ERROR] 2025-01-31 08:49:49.745 [main] Hooks - Captured screenshot for failed scenario : Parabank Login
+[INFO ] 2025-01-31 08:49:49.745 [main] Hooks - after scenario
+[INFO ] 2025-01-31 08:49:50.106 [main] Hooks - Driver is closed
+[INFO ] 2025-01-31 08:49:50.137 [main] Hooks - After All

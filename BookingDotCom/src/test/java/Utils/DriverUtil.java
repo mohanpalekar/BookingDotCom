@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Driver.Driver;
 
 public class DriverUtil {
-	
+
 	private final static Logger logger = LogManager.getLogger(DriverUtil.class);
 
 	private WebDriver driver;
@@ -24,6 +24,9 @@ public class DriverUtil {
 
 	private WebDriverWait wait;
 
+	private String timeOut = System.getProperty("timeOut");
+
+	private String pauseTime = System.getProperty("pauseTime");
 
 	public DriverUtil() {
 
@@ -31,7 +34,7 @@ public class DriverUtil {
 
 		jse = (JavascriptExecutor) driver;
 
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(timeOut)));
 
 	}
 
@@ -49,7 +52,7 @@ public class DriverUtil {
 		//		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		driver.get(url);
-		
+
 		logger.info("Driver is launched "+url);
 
 		// driver.manage().window().maximize();
@@ -78,7 +81,22 @@ public class DriverUtil {
 
 	public void scrollToElement(WebElement element) {
 
-		jse.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+		switch(System.getProperty("browserName").toLowerCase()) {
+
+		case "chrome": 
+			jse.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+			break;
+
+		case "firefox":
+			jse.executeScript("arguments[0].scrollIntoView(true);", element);
+			break;
+
+		default:
+			throw new IllegalArgumentException("Invalid browserName");
+
+		}
+
+
 
 	}
 
@@ -106,7 +124,7 @@ public class DriverUtil {
 	public void closeSession() {
 
 		Driver.getDriverInstace().closeDriver();
-		
+
 		logger.info("Driver is closed.");
 
 	}
@@ -117,11 +135,12 @@ public class DriverUtil {
 
 		highLightElement(element);
 
-		pause(1);
+		pause(Long.parseLong(pauseTime));
 
 		removeHighLightElement(element);
 
-		pause(1);
+		pause(Long.parseLong(pauseTime));
+
 	}
 
 
