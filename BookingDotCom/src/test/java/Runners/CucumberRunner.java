@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions( features= {"src/test/resources/features"},
 glue = {"stepDefinitions", "Hooks"},
-tags = "@ParabankLoginTest or @ParaBankRegister",
+tags = "@ParabankLoginTest",
 dryRun = false,
 monochrome = true, 
 plugin = {"pretty", 

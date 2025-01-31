@@ -1,5 +1,7 @@
 package Hooks;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -16,17 +18,19 @@ import io.cucumber.java.Scenario;
 
 public class Hooks {
 	
+	private final static Logger logger = LogManager.getLogger(Hooks.class);
+	
 	@BeforeAll()
 	public static void beforeAll() {
 		
-		System.out.println("Before All");
+		logger.info("Before All");
 		
 	}
 	
 	@Before
 	public void beforeScenario() {
 		
-		System.out.println("Before scenario");
+		logger.info("Before scenario");
 		
 		WebDriver driverParam = new DriverFactory("chrome").getDriverManager().getDriver();
 
@@ -34,18 +38,20 @@ public class Hooks {
 		
 		Driver.getDriverInstace().getDriver().manage().window().maximize();
 		
+		logger.info("Driver is initialized");
+		
 	}
 	
 	@BeforeStep
 	public void beforeStep() {
 		
-		System.out.println("Before Step");
+		//logger.info("Before Step");
 	}
 	
 	@AfterStep
 	public void afterStep() {
 		
-		System.out.println("After Step");
+		//logger.info("After Step");
 	}
 	
 	
@@ -54,6 +60,8 @@ public class Hooks {
 		
 		if(scenario.isFailed()) {
 			
+			logger.error("Scenario Failed : "+scenario.getName());
+			
 			TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriverInstace().getDriver();
 			
 			 byte [] screenshotData = screenshot.getScreenshotAs(OutputType.BYTES);
@@ -61,19 +69,23 @@ public class Hooks {
 			 scenario.attach(screenshotData, "image/png", scenario.getName());
 			 
 			 scenario.log("FAILED");
+			 
+			 logger.error("Captured screenshot for failed scenario : "+scenario.getName());
 			
 		}
 		
-		System.out.println("after scenario");
+		logger.info("after scenario");
 		
 		Driver.getDriverInstace().closeDriver();
+		
+		logger.info("Driver is closed");
 		
 	}
 	
 	@AfterAll()
 	public static void afterAll() {
 		
-		System.out.println("After All");
+		logger.info("After All");
 		
 	}
 	
