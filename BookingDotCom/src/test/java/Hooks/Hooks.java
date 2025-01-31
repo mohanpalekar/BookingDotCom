@@ -25,6 +25,8 @@ public class Hooks {
 		
 		logger.info("Before All");
 		
+		logger.info("Browser : "+System.getProperty("browserName"));
+		
 	}
 	
 	@Before
@@ -32,7 +34,9 @@ public class Hooks {
 		
 		logger.info("Before scenario");
 		
-		WebDriver driverParam = new DriverFactory("chrome").getDriverManager().getDriver();
+		String browser = System.getProperty("browserName");
+		
+		WebDriver driverParam = new DriverFactory(browser).getDriverManager().getDriver();
 
 		Driver.getDriverInstace().setDriver(driverParam);
 		
