@@ -3,6 +3,8 @@ package Utils;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Driver.Driver;
 
 public class DriverUtil {
+	
+	private final static Logger logger = LogManager.getLogger(DriverUtil.class);
 
 	private WebDriver driver;
 
@@ -45,6 +49,8 @@ public class DriverUtil {
 		//		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		driver.get(url);
+		
+		logger.info("Driver is launched "+url);
 
 		// driver.manage().window().maximize();
 
@@ -100,6 +106,8 @@ public class DriverUtil {
 	public void closeSession() {
 
 		Driver.getDriverInstace().closeDriver();
+		
+		logger.info("Driver is closed.");
 
 	}
 
