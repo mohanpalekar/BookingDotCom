@@ -30,7 +30,6 @@ jobs:
     - name: Build with Maven
       shell: cmd
       run: |
-        cd 
         mvn test -DbrowserName=Chrome -DtimeOut=10 -DpauseTime=1000 -Dcucumber.filter.tags="@Regression or @Sanity"  -B package --file pom.xml
         
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
