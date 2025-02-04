@@ -7,7 +7,7 @@ pipeline {
  
                 // To run Maven on a Windows agent, use
                 dir('BookingDotCom'){
-                bat 'mvn test -DbrowserName=%browser% -DtimeOut=%timeout% -DpauseTime=%pauseTime% -Dcucumber.filter.tags="@%Tag%"'
+                bat 'mvn test -DbrowserName=%browser% -DtimeOut=%timeout% -DpauseTime=%pauseTime% -Dcucumber.filter.tags="%Tag%"'
                 }
             }
  
