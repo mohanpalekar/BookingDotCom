@@ -8,11 +8,18 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: 
+  workflow_dispatch:
+    inputs:
+      browserName:
+        description: 'Browser to run the execution'     
+        required: true
+        default: 'chrome'
+      tags:
+        description: 'Test scenario tags' 
+        required: true
+        default: '@Regression'
+    
 
 jobs:
   build:
@@ -31,7 +38,7 @@ jobs:
       shell: cmd
       run: |
         cd BookingDotCom
-        mvn test -DbrowserName=Chrome -DtimeOut=10 -DpauseTime=1000 -Dcucumber.filter.tags="@Regression or @Sanity" 
+        mvn test -DbrowserName=${{ github.event.inputs.browserName }} -DtimeOut=10 -DpauseTime=1000 -Dcucumber.filter.tags="${{ github.event.inputs.tags }}" 
         
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
