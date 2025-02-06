@@ -19,6 +19,15 @@ on:
         description: 'Test scenario tags' 
         required: true
         default: '@Regression'
+      pauseTime:
+        description: 'Pause time' 
+        required: true
+        default: '10'
+      timeOut:
+        description: 'time out' 
+        required: true
+        default: '10'
+        
     
 
 jobs:
@@ -39,7 +48,7 @@ jobs:
       shell: cmd
       run: |
         cd BookingDotCom
-        mvn test -DbrowserName=${{ github.event.inputs.browserName }} -DtimeOut=10 -DpauseTime=1000 -Dcucumber.filter.tags="${{ github.event.inputs.tags }}" 
+        mvn test -DbrowserName=${{ github.event.inputs.browserName }} -DtimeOut=${{ github.event.inputs.timeOut }} -DpauseTime=${{ github.event.inputs.pauseTime }} -Dcucumber.filter.tags="${{ github.event.inputs.tags }}" 
 
     - uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
